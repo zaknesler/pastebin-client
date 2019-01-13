@@ -15,11 +15,18 @@
       </div>
     </div>
 
-    <div class="p-4 sm:p-6 mt-6 block w-full rounded-none rounded-lg bg-grey-lightest border border-grey-lighter text-grey-darker text-sm font-mono overflow-x-auto leading-loose whitespace-pre" v-html="paste.body" />
+    <pre v-highlightjs="paste.body" class="mt-8 w-full rounded-lg bg-grey-lightest border border-grey-lighter"><code :class="paste.language" /></pre>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import Highlight from 'vue-highlightjs'
+
+  import '~/assets/less/hljs.less'
+
+  Vue.use(Highlight)
+
   export default {
     data () {
       return {

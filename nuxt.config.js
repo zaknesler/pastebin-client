@@ -46,11 +46,15 @@ module.exports = {
     'nuxt-purgecss',
   ],
 
+  purgeCSS: {
+    whitelist: ['body', 'html', 'nuxt-progress', 'hljs'],
+  },
+
   /*
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://pastebin.test/api',
+    baseURL: 'http://pastebin-api.test/api',
   },
 
   /*
@@ -72,6 +76,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    // extractCSS: true,
+
     /*
     ** You can extend webpack config here
     */
