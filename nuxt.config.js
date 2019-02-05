@@ -1,7 +1,9 @@
 const pkg = require('./package')
 
+require('dotenv').config()
+
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -43,6 +45,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+    '@nuxtjs/dotenv',
     'nuxt-purgecss',
   ],
 
@@ -54,7 +57,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://pastebin-api.test/api',
+    baseURL: process.env.AXIOS_BASE_URL,
   },
 
   /*
@@ -76,7 +79,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // extractCSS: true,
+    extractCSS: true,
 
     /*
     ** You can extend webpack config here

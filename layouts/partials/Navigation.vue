@@ -58,7 +58,7 @@
   export default {
     methods: {
       onPage (name) {
-        return $nuxt.$route.name == name
+        return this.$nuxt.$route.name == name
       }
     }
   }
