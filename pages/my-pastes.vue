@@ -28,7 +28,7 @@
 
     methods: {
       async getPastes () {
-        let { data } = await this.$axios.$get('/pastes')
+        let { data } = await this.$axios.$get('/my-pastes')
 
         this.pastes = data
       }

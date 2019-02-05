@@ -3,7 +3,9 @@
     :to="{ name: 'slug', params: { slug: paste.slug } }"
     class="p-6 mb-6 block w-full rounded-lg text-grey-darker hover:text-green-darker bg-grey-lightest hover:bg-green-lightest no-underline font-semibold"
   >
-    {{ paste.name }}
+    <div>{{ paste.name }}</div>
+
+    <div v-if="paste.visibility !== 'public'" class="mt-1 text-xs opacity-50 capitalize" v-text="paste.visibility" />
   </nuxt-link>
 </template>
 
